@@ -5,23 +5,26 @@ import {
   createColumnHelper,
   flexRender,
 } from "@tanstack/react-table";
-import { useNavigate } from "react-router-dom";
-import type { Employee } from "../../domain/employee.types";
+import type { Employee } from "../../domain/employee-detail.types";
 
-interface EmployeesTableProps {
+interface EmployeeDetailTableProps {
   employees: Employee[];
+  onSelect: (employee: Employee) => void;
 }
 
 const columnHelper = createColumnHelper<Employee>();
 
-export function EmployeesTable({ employees }: EmployeesTableProps) {
-  const navigate = useNavigate();
+export function EmployeeDetailTable({
+  employees,
+  onSelect,
+}: EmployeeDetailTableProps) {
   const columns = useMemo(
     () => [
       columnHelper.accessor((row) => `${row.firstName} ${row.lastName}`, {
         id: "name",
         header: "Name",
       }),
+      columnHelper.accessor("email", { header: "Email" }),
       columnHelper.accessor("position", { header: "Position" }),
       columnHelper.accessor("department", { header: "Department" }),
       columnHelper.accessor("status", {
@@ -82,10 +85,13 @@ export function EmployeesTable({ employees }: EmployeesTableProps) {
             <tr
               key={row.id}
               className="cursor-pointer hover:bg-gray-50"
-              onClick={() => navigate(`/employee-detail/${row.original.id}`)}
+              onClick={() => onSelect(row.original)}
             >
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
+                <td
+                  key={cell.id}
+                  className="whitespace-nowrap px-6 py-4 text-sm text-gray-900"
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}

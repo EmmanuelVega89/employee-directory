@@ -45,6 +45,10 @@ Employee Directory — a React 19 + TypeScript app built with Vite 7, Redux Tool
 - Use React Hook Form + Zod for ALL forms
 - Shared components go in `src/shared/components/`
 
+## Documentation
+
+- Always use context7 to check up-to-date docs when implementing or modifying code that uses RTK Query, React Hook Form, Zod, TanStack Table, or any third-party library.
+
 ## Mock API
 
 - JSON Server running on `http://localhost:3001`

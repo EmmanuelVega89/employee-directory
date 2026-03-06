@@ -1,14 +1,14 @@
 {
   "employees": [
     {
-      "id": 1,
-      "firstName": "Ana",
-      "lastName": "García",
-      "email": "ana.garcia@apsys.mx",
+      "firstName": "Emmanuel",
+      "lastName": "Vega",
+      "email": "emmanuel.vegaledezma@gmail.com",
       "position": "Frontend Developer",
-      "department": "Engineering",
+      "department": "Design",
       "startDate": "2022-03-15",
-      "status": "active"
+      "status": "active",
+      "id": 1
     },
     {
       "id": 2,
@@ -99,14 +99,42 @@
       "department": "Analytics",
       "startDate": "2022-07-18",
       "status": "active"
+    },
+    {
+      "firstName": "Chequito",
+      "lastName": "Checks",
+      "email": "checks@pasarlabien.com",
+      "position": "Frontend Developer",
+      "department": "Design",
+      "startDate": "2001-10-18",
+      "status": "active",
+      "id": 11
     }
   ],
   "departments": [
-    { "id": 1, "name": "Engineering" },
-    { "id": 2, "name": "Design" },
-    { "id": 3, "name": "Operations" },
-    { "id": 4, "name": "Infrastructure" },
-    { "id": 5, "name": "Human Resources" },
-    { "id": 6, "name": "Analytics" }
+    {
+      "id": 1,
+      "name": "Engineering"
+    },
+    {
+      "id": 2,
+      "name": "Design"
+    },
+    {
+      "id": 3,
+      "name": "Operations"
+    },
+    {
+      "id": 4,
+      "name": "Infrastructure"
+    },
+    {
+      "id": 5,
+      "name": "Human Resources"
+    },
+    {
+      "id": 6,
+      "name": "Analytics"
+    }
   ]
 }
